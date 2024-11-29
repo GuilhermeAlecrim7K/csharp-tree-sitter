@@ -15,15 +15,15 @@ git clone https://github.com/tree-sitter/csharp-tree-sitter.git --recursive
 ## Building
 
 Requirements:
-- Windows-only (the Makefile in the `tree-sitter` has OS-specific stuff in it so far)
-- .NET 7
+- .NET 8
 
 We'll first need to build the dependencies, and then the C# project.
 
 - get dependencies built
   - `cd tree-sitter`
-  - `nmake`
+  - `make`
   - `cd ..`
+  - Make sure dotnet runtime can find the native dependencies. You can simply copy the dll/so/dylib files from `tree-sitter` to the output directory of the C# project.
 - `dotnet build csharp-tree-sitter.csproj`
 
 ## Testing

@@ -1,0 +1,42 @@
+########
+#
+#	Tree-Sitter Base and Common Language Parsers
+#
+
+CFLAGS ?= -O3
+
+# OS-specific bits
+ifneq ($(findstring darwin,$(shell $(CC) -dumpmachine)),)
+	SOEXT = dylib
+	LINKSHARED += -dynamiclib
+else
+	SOEXT = so
+	LINKSHARED += -shared
+endif
+
+all: libtree-sitter.$(SOEXT) libtree-sitter-cpp.$(SOEXT)
+
+libtree-sitter.$(SOEXT):
+	@$(MAKE) -C tree-sitter libtree-sitter.$(SOEXT)
+	@cp tree-sitter/libtree-sitter.$(SOEXT) .
+
+########
+#
+#   C++
+#
+libtree-sitter-cpp.$(SOEXT):
+	@$(MAKE) -C tree-sitter-cpp libtree-sitter-cpp.$(SOEXT)
+	@cp tree-sitter-cpp/libtree-sitter-cpp.$(SOEXT) .
+
+########
+#
+#	Clean
+#
+clean:
+	@$(MAKE) -C tree-sitter clean
+	@$(MAKE) -C tree-sitter-cpp clean
+	-rm *.$(SOEXT) 2>/dev/null
+
+.PHONY: all libtree-sitter.$(SOEXT) clean
+
+# End of File.

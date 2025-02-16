@@ -11,7 +11,7 @@ namespace TreeSitterTest
     {
         public static TSLanguage lang = new TSLanguage(tree_sitter_cpp());
 
-        [DllImport("tree-sitter-cpp.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("tree-sitter-cpp", CallingConvention = CallingConvention.Cdecl)]
         private static extern IntPtr tree_sitter_cpp();
 
         public static void PostOrderTraverse(string path, String filetext, TSCursor cursor)

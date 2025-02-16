@@ -21,9 +21,10 @@ We'll first need to build the dependencies, and then the C# project.
 
 - get dependencies built
   - `cd tree-sitter`
-  - `make`
+  - `make -f Makefile.Linux` if on Linux/MacOS
+  - `nmake -f Makefile.Windows` if on Windows
   - `cd ..`
-  - Make sure dotnet runtime can find the native dependencies. You can simply copy the dll/so/dylib files from `tree-sitter` to the output directory of the C# project.
+  - **Make sure dotnet runtime can find the native dependencies**. You can simply copy the dll/so/dylib files from `tree-sitter` to the output directory of the C# project.
 - `dotnet build csharp-tree-sitter.csproj`
 
 ## Testing

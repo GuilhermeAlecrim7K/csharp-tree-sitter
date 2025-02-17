@@ -67,49 +67,49 @@ public sealed partial class TSQueryCursor : IDisposable {
     }
 
     #region PInvoke
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial IntPtr ts_query_cursor_new();
 
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial void ts_query_cursor_delete(IntPtr cursor);
 
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial void ts_query_cursor_exec(IntPtr cursor, IntPtr query, TSNode node);
 
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     [return: MarshalAs(UnmanagedType.Bool)]
     private static partial bool ts_query_cursor_did_exceed_match_limit(IntPtr cursor);
 
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial uint ts_query_cursor_match_limit(IntPtr cursor);
 
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial void ts_query_cursor_set_match_limit(IntPtr cursor, uint limit);
 
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial void ts_query_cursor_set_byte_range(IntPtr cursor, uint start_byte, uint end_byte);
 
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial void ts_query_cursor_set_point_range(IntPtr cursor, TSPoint start_point, TSPoint end_point);
 
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     [return: MarshalAs(UnmanagedType.Bool)]
     private static partial bool ts_query_cursor_next_match(IntPtr cursor, out TSQueryMatch match);
 
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial void ts_query_cursor_remove_match(IntPtr cursor, uint id);
 
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     [return: MarshalAs(UnmanagedType.Bool)]
     private static partial bool ts_query_cursor_next_capture(IntPtr cursor, out TSQueryMatch match, out uint capture_index);

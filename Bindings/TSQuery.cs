@@ -60,62 +60,62 @@ public sealed partial class TSQuery : IDisposable {
     }
 
     #region PInvoke
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial void ts_query_delete(IntPtr query);
 
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial uint ts_query_pattern_count(IntPtr query);
 
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial uint ts_query_capture_count(IntPtr query);
 
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial uint ts_query_string_count(IntPtr query);
 
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial uint ts_query_start_byte_for_pattern(IntPtr query, uint patternIndex);
 
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial IntPtr ts_query_predicates_for_pattern(IntPtr query, uint patternIndex, out uint length);
 
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     [return: MarshalAs(UnmanagedType.Bool)]
     private static partial bool ts_query_is_pattern_rooted(IntPtr query, uint patternIndex);
 
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     [return: MarshalAs(UnmanagedType.Bool)]
     private static partial bool ts_query_is_pattern_non_local(IntPtr query, uint patternIndex);
 
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     [return: MarshalAs(UnmanagedType.Bool)]
     private static partial bool ts_query_is_pattern_guaranteed_at_step(IntPtr query, uint byteOffset);
 
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial IntPtr ts_query_capture_name_for_id(IntPtr query, uint id, out uint length);
 
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial TSQuantifier ts_query_capture_quantifier_for_id(IntPtr query, uint patternId, uint captureId);
 
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial IntPtr ts_query_string_value_for_id(IntPtr query, uint id, out uint length);
 
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial void ts_query_disable_capture(IntPtr query, [MarshalAs(UnmanagedType.LPUTF8Str)] string captureName, uint captureNameLength);
 
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial void ts_query_disable_pattern(IntPtr query, uint patternIndex);
     #endregion

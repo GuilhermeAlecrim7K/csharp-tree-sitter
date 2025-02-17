@@ -155,49 +155,49 @@ public sealed partial class TSLanguage : IDisposable {
     * 1. The byte offset of the error is written to the `error_offset` parameter.
     * 2. The type of error is written to the `error_type` parameter.
     */
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial IntPtr ts_query_new(IntPtr language, [MarshalAs(UnmanagedType.LPUTF8Str)] string source, uint source_len, out uint error_offset, out TSQueryError error_type);
 
     /**
     * Get the number of distinct node types in the language.
     */
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial uint ts_language_symbol_count(IntPtr language);
 
     /**
     * Get a node type string for the given numerical id.
     */
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial IntPtr ts_language_symbol_name(IntPtr language, ushort symbol);
 
     /**
     * Get the numerical id for the given node type string.
     */
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial ushort ts_language_symbol_for_name(IntPtr language, [MarshalAs(UnmanagedType.LPUTF8Str)] string str, uint length, [MarshalAs(UnmanagedType.Bool)] bool is_named);
 
     /**
     * Get the number of distinct field names in the language.
     */
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial uint ts_language_field_count(IntPtr language);
 
     /**
     * Get the field name string for the given numerical id.
     */
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial IntPtr ts_language_field_name_for_id(IntPtr language, ushort fieldId);
 
     /**
     * Get the numerical id for the given field name string.
     */
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial ushort ts_language_field_id_for_name(IntPtr language, [MarshalAs(UnmanagedType.LPUTF8Str)] string str, uint length);
 
@@ -207,7 +207,7 @@ public sealed partial class TSLanguage : IDisposable {
     *
     * See also `ts_node_is_named`. Hidden nodes are never returned from the API.
     */
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial TSSymbolType ts_language_symbol_type(IntPtr language, ushort symbol);
 
@@ -218,7 +218,7 @@ public sealed partial class TSLanguage : IDisposable {
     *
     * See also `ts_parser_set_language`.
     */
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial uint ts_language_version(IntPtr language);
     #endregion

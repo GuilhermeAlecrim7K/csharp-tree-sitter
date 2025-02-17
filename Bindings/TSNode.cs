@@ -178,42 +178,42 @@ public partial struct TSNode {
     /**
     * Get the node's type as a null-terminated string.
     */
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial IntPtr ts_node_type(TSNode node);
 
     /**
     * Get the node's type as a numerical id.
     */
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial ushort ts_node_symbol(TSNode node);
 
     /**
     * Get the node's start byte.
     */
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial uint ts_node_start_byte(TSNode node);
 
     /**
     * Get the node's start position in terms of rows and columns.
     */
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial TSPoint ts_node_start_point(TSNode node);
 
     /**
     * Get the node's end byte.
     */
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial uint ts_node_end_byte(TSNode node);
 
     /**
     * Get the node's end position in terms of rows and columns.
     */
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial TSPoint ts_node_end_point(TSNode node);
 
@@ -223,11 +223,11 @@ public partial struct TSNode {
     * This string is allocated with `malloc` and the caller is responsible for
     * freeing it using `free`.
     */
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial IntPtr ts_node_string(TSNode node);
 
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial void ts_node_string_free(IntPtr str);
 
@@ -236,7 +236,7 @@ public partial struct TSNode {
     * `ts_node_next_sibling` will return a null node to indicate that no such node
     * was found.
     */
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     [return: MarshalAs(UnmanagedType.Bool)]
     private static partial bool ts_node_is_null(TSNode node);
@@ -246,7 +246,7 @@ public partial struct TSNode {
     * grammar, whereas *anonymous* nodes correspond to string literals in the
     * grammar.
     */
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     [return: MarshalAs(UnmanagedType.Bool)]
     private static partial bool ts_node_is_named(TSNode node);
@@ -255,7 +255,7 @@ public partial struct TSNode {
     * Check if the node is *missing*. Missing nodes are inserted by the parser in
     * order to recover from certain kinds of syntax errors.
     */
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     [return: MarshalAs(UnmanagedType.Bool)]
     private static partial bool ts_node_is_missing(TSNode node);
@@ -264,7 +264,7 @@ public partial struct TSNode {
     * Check if the node is *extra*. Extra nodes represent things like comments,
     * which are not required the grammar, but can appear anywhere.
     */
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     [return: MarshalAs(UnmanagedType.Bool)]
     private static partial bool ts_node_is_extra(TSNode node);
@@ -272,7 +272,7 @@ public partial struct TSNode {
     /**
     * Check if a syntax node has been edited.
     */
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     [return: MarshalAs(UnmanagedType.Bool)]
     private static partial bool ts_node_has_changes(TSNode node);
@@ -280,7 +280,7 @@ public partial struct TSNode {
     /**
     * Check if the node is a syntax error or contains any syntax errors.
     */
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     [return: MarshalAs(UnmanagedType.Bool)]
     private static partial bool ts_node_has_error(TSNode node);
@@ -288,7 +288,7 @@ public partial struct TSNode {
     /**
     * Get the node's immediate parent.
     */
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial TSNode ts_node_parent(TSNode node);
 
@@ -296,7 +296,7 @@ public partial struct TSNode {
     * Get the node's child at the given index, where zero represents the first
     * child.
     */
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial TSNode ts_node_child(TSNode node, uint index);
 
@@ -304,14 +304,14 @@ public partial struct TSNode {
     * Get the field name for node's child at the given index, where zero represents
     * the first child. Returns NULL, if no field is found.
     */
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial IntPtr ts_node_field_name_for_child(TSNode node, uint index);
 
     /**
     * Get the node's number of children.
     */
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial uint ts_node_child_count(TSNode node);
 
@@ -320,7 +320,7 @@ public partial struct TSNode {
     *
     * See also `ts_node_is_named`.
     */
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial TSNode ts_node_named_child(TSNode node, uint index);
 
@@ -329,7 +329,7 @@ public partial struct TSNode {
     *
     * See also `ts_node_is_named`.
     */
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial uint ts_node_named_child_count(TSNode node);
 
@@ -339,7 +339,7 @@ public partial struct TSNode {
     * You can convert a field name to an id using the
     * `ts_language_field_id_for_name` function.
     */
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial TSNode ts_node_child_by_field_name(TSNode self, [MarshalAs(UnmanagedType.LPUTF8Str)] string field_name, uint field_name_length);
 
@@ -349,43 +349,43 @@ public partial struct TSNode {
     * You can convert a field name to an id using the
     * `ts_language_field_id_for_name` function.
     */
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial TSNode ts_node_child_by_field_id(TSNode self, ushort fieldId);
 
     /**
     * Get the node's next / previous sibling.
     */
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial TSNode ts_node_next_sibling(TSNode self);
 
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial TSNode ts_node_prev_sibling(TSNode self);
 
     /**
     * Get the node's next / previous *named* sibling.
     */
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial TSNode ts_node_next_named_sibling(TSNode self);
 
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial TSNode ts_node_prev_named_sibling(TSNode self);
 
     /**
     * Get the node's first child that extends beyond the given byte offset.
     */
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial TSNode ts_node_first_child_for_byte(TSNode self, uint byteOffset);
 
     /**
     * Get the node's first named child that extends beyond the given byte offset.
     */
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial TSNode ts_node_first_named_child_for_byte(TSNode self, uint byteOffset);
 
@@ -393,11 +393,11 @@ public partial struct TSNode {
     * Get the smallest node within this node that spans the given range of bytes
     * or (row, column) positions.
     */
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial TSNode ts_node_descendant_for_byte_range(TSNode self, uint startByte, uint endByte);
 
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial TSNode ts_node_descendant_for_point_range(TSNode self, TSPoint startPoint, TSPoint endPoint);
 
@@ -405,18 +405,18 @@ public partial struct TSNode {
     * Get the smallest named node within this node that spans the given range of
     * bytes or (row, column) positions.
     */
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial TSNode ts_node_named_descendant_for_byte_range(TSNode self, uint startByte, uint endByte);
 
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial TSNode ts_node_named_descendant_for_point_range(TSNode self, TSPoint startPoint, TSPoint endPoint);
 
     /**
     * Check if two nodes are identical.
     */
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     [return: MarshalAs(UnmanagedType.Bool)]
     private static partial bool ts_node_eq(TSNode node1, TSNode node2);

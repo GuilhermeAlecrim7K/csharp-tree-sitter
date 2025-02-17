@@ -84,28 +84,28 @@ public sealed partial class TSCursor : IDisposable {
     /// possible using the `TSNode` functions. It is a mutable object that is always
     /// on a certain syntax node, and can be moved imperatively to different nodes.
     /// </summary>
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial TSTreeCursor ts_tree_cursor_new(TSNode node);
 
     /// <summary>
     /// Delete a tree cursor, freeing all of the memory that it used.
     /// </summary>
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial void ts_tree_cursor_delete(ref TSTreeCursor cursor);
 
     /// <summary>
     /// Re-initialize a tree cursor to start at a different node.
     /// </summary>
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial void ts_tree_cursor_reset(ref TSTreeCursor cursor, TSNode node);
 
     /// <summary>
     /// Get the tree cursor's current node.
     /// </summary>
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial TSNode ts_tree_cursor_current_node(ref TSTreeCursor cursor);
 
@@ -114,7 +114,7 @@ public sealed partial class TSCursor : IDisposable {
     /// This returns `NULL` if the current node doesn't have a field.
     /// See also `ts_node_child_by_field_name`.
     /// </summary>
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial IntPtr ts_tree_cursor_current_field_name(ref TSTreeCursor cursor);
 
@@ -123,7 +123,7 @@ public sealed partial class TSCursor : IDisposable {
     /// This returns zero if the current node doesn't have a field.
     /// See also `ts_node_child_by_field_id`, `ts_language_field_id_for_name`.
     /// </summary>
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial ushort ts_tree_cursor_current_field_id(ref TSTreeCursor cursor);
 
@@ -132,7 +132,7 @@ public sealed partial class TSCursor : IDisposable {
     /// This returns `true` if the cursor successfully moved, and returns `false`
     /// if there was no parent node (the cursor was already on the root node).
     /// </summary>
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     [return: MarshalAs(UnmanagedType.Bool)]
     private static partial bool ts_tree_cursor_goto_parent(ref TSTreeCursor cursor);
@@ -142,7 +142,7 @@ public sealed partial class TSCursor : IDisposable {
     /// This returns `true` if the cursor successfully moved, and returns `false`
     /// if there was no next sibling node.
     /// </summary>
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     [return: MarshalAs(UnmanagedType.Bool)]
     private static partial bool ts_tree_cursor_goto_next_sibling(ref TSTreeCursor cursor);
@@ -152,7 +152,7 @@ public sealed partial class TSCursor : IDisposable {
     /// This returns `true` if the cursor successfully moved, and returns `false`
     /// if there were no children.
     /// </summary>
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     [return: MarshalAs(UnmanagedType.Bool)]
     private static partial bool ts_tree_cursor_goto_first_child(ref TSTreeCursor cursor);
@@ -163,7 +163,7 @@ public sealed partial class TSCursor : IDisposable {
     /// This returns the index of the child node if one was found, and returns -1
     /// if no such child was found.
     /// </summary>
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial long ts_tree_cursor_goto_first_child_for_byte(ref TSTreeCursor cursor, uint byteOffset);
 
@@ -173,11 +173,11 @@ public sealed partial class TSCursor : IDisposable {
     /// This returns the index of the child node if one was found, and returns -1
     /// if no such child was found.
     /// </summary>
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial long ts_tree_cursor_goto_first_child_for_point(ref TSTreeCursor cursor, TSPoint point);
 
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial TSTreeCursor ts_tree_cursor_copy(ref TSTreeCursor cursor);
     #endregion

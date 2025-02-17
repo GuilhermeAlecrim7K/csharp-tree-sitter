@@ -129,15 +129,15 @@ public partial class TSParser : IDisposable {
     }
 
     #region PInvoke
-    [LibraryImport("tree-sitter-cpp.dll")]
+    [LibraryImport("tree-sitter-cpp")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial IntPtr tree_sitter_cpp();
 
-    [LibraryImport("tree-sitter-c-sharp.dll")]
+    [LibraryImport("tree-sitter-c-sharp")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial IntPtr tree_sitter_c_sharp();
 
-    [LibraryImport("tree-sitter-rust.dll")]
+    [LibraryImport("tree-sitter-rust")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial IntPtr tree_sitter_rust();
 
@@ -145,14 +145,14 @@ public partial class TSParser : IDisposable {
     /**
     * Create a new parser.
     */
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial IntPtr ts_parser_new();
 
     /**
     * Delete the parser, freeing all of the memory that it used.
     */
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial void ts_parser_delete(IntPtr parser);
 
@@ -168,7 +168,7 @@ public partial class TSParser : IDisposable {
     /// and compare it to this library's `TREE_SITTER_LANGUAGE_VERSION` and
     /// `TREE_SITTER_MIN_COMPATIBLE_LANGUAGE_VERSION` constants.
     /// </summary>
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     [return: MarshalAs(UnmanagedType.I1)]
     private static partial bool ts_parser_set_language(IntPtr parser, IntPtr language);
@@ -176,7 +176,7 @@ public partial class TSParser : IDisposable {
     /**
     * Get the parser's current language.
     */
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial IntPtr ts_parser_language(IntPtr parser);
 
@@ -202,7 +202,7 @@ public partial class TSParser : IDisposable {
     /// will not be assigned, and this function will return `false`. On success,
     /// this function returns `true`
     /// </summary>
-    [DllImport("tree-sitter.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("tree-sitter", CallingConvention = CallingConvention.Cdecl)]
     //[return: MarshalAs(UnmanagedType.I1)]
     private static extern bool ts_parser_set_included_ranges(IntPtr parser, [In, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] TSRange[] ranges, uint length);
 
@@ -213,7 +213,7 @@ public partial class TSParser : IDisposable {
     * or write to it. The length of the array will be written to the given
     * `length` pointer.
     */
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     [return: MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)]
     private static partial TSRange[] ts_parser_included_ranges(IntPtr parser, out uint length);
@@ -224,7 +224,7 @@ public partial class TSParser : IDisposable {
     * above. The second two parameters indicate the location of the buffer and its
     * length in bytes.
     */
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial IntPtr ts_parser_parse_string(IntPtr parser, IntPtr oldTree, [MarshalAs(UnmanagedType.LPUTF8Str)] string input, uint length);
 
@@ -234,7 +234,7 @@ public partial class TSParser : IDisposable {
     * above. The second two parameters indicate the location of the buffer and its
     * length in bytes.
     */
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     //private static extern IntPtr ts_parser_parse_string_encoding(IntPtr parser, IntPtr oldTree, [MarshalAs(UnmanagedType.LPUTF8Str)] string input, uint length, TSInputEncoding encoding);
     private static partial IntPtr ts_parser_parse_string_encoding(IntPtr parser, IntPtr oldTree, [MarshalAs(UnmanagedType.LPWStr)] string input, uint length, TSInputEncoding encoding);
@@ -248,7 +248,7 @@ public partial class TSParser : IDisposable {
     * and instead intend to use this parser to parse some other document, you must
     * call `ts_parser_reset` first.
     */
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial void ts_parser_reset(IntPtr parser);
 
@@ -259,14 +259,14 @@ public partial class TSParser : IDisposable {
     * If parsing takes longer than this, it will halt early, returning NULL.
     * See `ts_parser_parse` for more information.
     */
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial void ts_parser_set_timeout_micros(IntPtr parser, ulong timeout);
 
     /**
     * Get the duration in microseconds that parsing is allowed to take.
     */
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial ulong ts_parser_timeout_micros(IntPtr parser);
 
@@ -277,14 +277,14 @@ public partial class TSParser : IDisposable {
     * from this pointer during parsing. If it reads a non-zero value, it will
     * halt early, returning NULL. See `ts_parser_parse` for more information.
     */
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial void ts_parser_set_cancellation_flag(IntPtr parser, ref IntPtr flag);
 
     /**
     * Get the parser's current cancellation flag pointer.
     */
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial IntPtr ts_parser_cancellation_flag(IntPtr parser);
 
@@ -295,7 +295,7 @@ public partial class TSParser : IDisposable {
     * previously assigned, the caller is responsible for releasing any memory
     * owned by the previous logger.
     */
-    [DllImport("tree-sitter.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("tree-sitter", CallingConvention = CallingConvention.Cdecl)]
     private static extern void ts_parser_set_logger(IntPtr parser, TSLoggerData logger);
     #endregion
 

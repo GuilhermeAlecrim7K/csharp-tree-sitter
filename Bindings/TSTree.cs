@@ -54,21 +54,21 @@ public sealed partial class TSTree : IDisposable {
     * You need to copy a syntax tree in order to use it on more than one thread at
     * a time, as syntax trees are not thread safe.
     */
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial IntPtr ts_tree_copy(IntPtr tree);
 
     /**
     * Delete the syntax tree, freeing all of the memory that it used.
     */
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial void ts_tree_delete(IntPtr tree);
 
     /**
     * Get the root node of the syntax tree.
     */
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial TSNode ts_tree_root_node(IntPtr tree);
 
@@ -76,14 +76,14 @@ public sealed partial class TSTree : IDisposable {
     * Get the root node of the syntax tree, but with its position
     * shifted forward by the given offset.
     */
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial TSNode ts_tree_root_node_with_offset(IntPtr tree, uint offsetBytes, TSPoint offsetPoint);
 
     /**
     * Get the language that was used to parse the syntax tree.
     */
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial IntPtr ts_tree_language(IntPtr tree);
 
@@ -92,11 +92,11 @@ public sealed partial class TSTree : IDisposable {
     *
     * The returned pointer must be freed by the caller.
     */
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial IntPtr ts_tree_included_ranges(IntPtr tree, out uint length);
 
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial void ts_tree_included_ranges_free(IntPtr ranges);
 
@@ -107,7 +107,7 @@ public sealed partial class TSTree : IDisposable {
     * You must describe the edit both in terms of byte offsets and in terms of
     * (row, column) coordinates.
     */
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial void ts_tree_edit(IntPtr tree, ref TSInputEdit edit);
 
@@ -125,7 +125,7 @@ public sealed partial class TSTree : IDisposable {
     * for freeing it using `free`. The length of the array will be written to the
     * given `length` pointer.
     */
-    [LibraryImport("tree-sitter.dll")]
+    [LibraryImport("tree-sitter")]
     [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
     private static partial IntPtr ts_tree_get_changed_ranges(IntPtr old_tree, IntPtr new_tree, out uint length);
     #endregion

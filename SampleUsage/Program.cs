@@ -5,7 +5,7 @@ using TreeSitter.CSharp;
 
 internal class Program {
 
-    [DllImport("tree-sitter-cpp.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("tree-sitter-cpp", CallingConvention = CallingConvention.Cdecl)]
     private static extern nint tree_sitter_cpp();
 
     private static void Main(string[] args) {

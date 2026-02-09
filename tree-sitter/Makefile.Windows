@@ -10,7 +10,7 @@ BIN=..\bin\debug\net8.0
 
 DLLS=\
 	$(BIN)/tree-sitter.dll \
-	$(BIN)/tree-sitter-cpp.dll \
+	$(BIN)/tree-sitter-json.dll \
 
 all: dirs $(DLLS)
 
@@ -49,13 +49,13 @@ $(BIN)/tree-sitter.dll: $(BIN)/tree-sitter.obj
 #
 #   C++
 #
-$(BIN)/tree-sitter-cpp-parser.obj: tree-sitter-cpp/src/parser.c
-	cl $(CFLAGS) /Fo:$@ /Itree-sitter-cpp/src/include /c $**
+$(BIN)/tree-sitter-json-parser.obj: tree-sitter-json/src/parser.c
+	cl $(CFLAGS) /Fo:$@ /Itree-sitter-json/src/include /c $**
 
-$(BIN)/tree-sitter-cpp-scanner.obj: tree-sitter-cpp/src/scanner.c
-	cl $(CFLAGS) /Fo:$@ /Itree-sitter-cpp/src/include /c $**
+$(BIN)/tree-sitter-json-scanner.obj: tree-sitter-json/src/scanner.c
+	cl $(CFLAGS) /Fo:$@ /Itree-sitter-json/src/include /c $**
 
-$(BIN)/tree-sitter-cpp.dll: $(BIN)/tree-sitter-cpp-parser.obj $(BIN)/tree-sitter-cpp-scanner.obj
+$(BIN)/tree-sitter-json.dll: $(BIN)/tree-sitter-json-parser.obj $(BIN)/tree-sitter-json-scanner.obj
 	cl /LD $(CFLAGS) /Fe:$@ $** /link $(LFLAGS)
 
 ########

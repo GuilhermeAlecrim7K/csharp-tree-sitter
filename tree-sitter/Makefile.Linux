@@ -14,7 +14,7 @@ else
 	LINKSHARED += -shared
 endif
 
-all: libtree-sitter.$(SOEXT) libtree-sitter-cpp.$(SOEXT)
+all: libtree-sitter.$(SOEXT) libtree-sitter-json.$(SOEXT)
 
 libtree-sitter.$(SOEXT):
 	@$(MAKE) -C tree-sitter libtree-sitter.$(SOEXT)
@@ -24,9 +24,9 @@ libtree-sitter.$(SOEXT):
 #
 #   C++
 #
-libtree-sitter-cpp.$(SOEXT):
-	@$(MAKE) -C tree-sitter-cpp libtree-sitter-cpp.$(SOEXT)
-	@cp tree-sitter-cpp/libtree-sitter-cpp.$(SOEXT) .
+libtree-sitter-json.$(SOEXT):
+	@$(MAKE) -C tree-sitter-json libtree-sitter-json.$(SOEXT)
+	@cp tree-sitter-json/libtree-sitter-json.$(SOEXT) .
 
 ########
 #
@@ -34,7 +34,7 @@ libtree-sitter-cpp.$(SOEXT):
 #
 clean:
 	@$(MAKE) -C tree-sitter clean
-	@$(MAKE) -C tree-sitter-cpp clean
+	@$(MAKE) -C tree-sitter-json clean
 	-rm *.$(SOEXT) 2>/dev/null
 
 .PHONY: all libtree-sitter.$(SOEXT) clean
